@@ -140,3 +140,20 @@ console.log(`Testing toPositiveArray - test array ${testInputArray2} :`, toPosit
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+// Edabit challenge, Highest Digit: Create a function that takes a number as an argument and returns the highest digit in that number.
+
+const highestDigit = number => {
+  let highest = 0
+  for (let i = 0; i < number.toString().length; i++) { // converting number to string to evaluate each digit/character individually
+    if (number.toString()[i] > highest) {
+      highest = number.toString()[i];
+    }
+  }
+  return highest;
+} // end highestDigit
+
+console.log(`Testing highestDigit - number is 3867: `, highestDigit(3867));
+console.log(`Testing highestDigit - number is 1111112111: `, highestDigit(1111112111));
+console.log(`Testing highestDigit - number is 98001: `, highestDigit(98001));
+console.log(`Testing highestDigit - number is -1445: `, highestDigit(-1445));
