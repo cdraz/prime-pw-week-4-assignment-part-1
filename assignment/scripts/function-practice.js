@@ -65,15 +65,29 @@ function getLast( array ) {
  }
 } // end getLast
 
+let minnesotaCities = ['Minneapolis', 'Saint Paul', 'Duluth']; // array to test getLast
 console.log('Testing getLast - should be undefined: ', getLast([]));
-console.log('Testing getLast - should be "Duluth": ', getLast(['Minneapolis', 'Saint Paul', 'Duluth']));
+console.log('Testing getLast - should be "Duluth": ', getLast(minnesotaCities));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find( value, array ){
-  
-}
+  let valueFound = false;
+  for (element of array) {
+    if (element === value) {
+      valueFound = true;
+    }
+  }
+  return valueFound; 
+} // end find
+
+// testing find function
+const dndClasses = ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard']; // test array for find
+console.log('Finding Warlock: ', find('Warlock', dndClasses));
+console.log('Finding Knight: ', find('Knight', dndClasses));
+console.log('Finding Cleric: ', find('Cleric', dndClasses));
+console.log('Finding Necromancer: ', find('Necromancer', dndClasses));
 
 // ----------------------
 // Stretch Goals
